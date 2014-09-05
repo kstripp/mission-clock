@@ -1,0 +1,50 @@
+body {
+	background-color: black;
+}
+
+/* Not sure I actually want to put a specific style on <p> */
+/*p {
+	font-size: 7vw;
+	line-height: 2vw;
+	text-align: center;
+	font-family: Sans-Serif;
+	color: yellow;
+}*/
+
+.mainwindow {
+	position: relative;
+	float: right;
+	width: 85%;
+	font-size: 7vw;
+	line-height: 2vw;
+	text-align: center;
+	font-family: Sans-Serif;
+	color: yellow;
+}
+
+.sidebar {
+	position: relative;
+	float: left;
+	width: 15%;
+	height: 96vh;
+	margin-top: 1vh;
+	background-color: #080808;
+}
+
+.button {
+	background-color: #202020;
+	border-radius: 3px;
+	color: #808080;
+	padding: 5px 15px 5px 15px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+	/* only needed for <a>, but shouldn't hurt anything else */
+	display: block;
+}
+
+.button:hover {
+	background-color: #323232;
+}
