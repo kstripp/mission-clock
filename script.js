@@ -17,3 +17,19 @@ function format_time_digits(value)
 	}
 	return value;
 }
+
+function show_menu()
+{
+	button = document.getElementById("settings_button");
+	button.setAttribute("onclick", "hide_menu()");
+	sidebar = document.getElementById("sidebar");
+	sidebar.style.marginLeft="0px";
+}
+
+function hide_menu()
+{
+	button = document.getElementById("settings_button");
+	button.setAttribute("onclick", "show_menu()");
+	sidebar = document.getElementById("sidebar");
+	sidebar.style.marginLeft="-250px";
+}
