@@ -64,6 +64,8 @@ function change_mission(name, date)
 	if (name == "UTC")
 	{	
 		label.innerHTML = "UTC";
+	} else if (name == "E1P") {
+		label.innerHTML = name + " Elapsed Swimming Time";
 	} else {
 		if (now > launch_date)
 		{
