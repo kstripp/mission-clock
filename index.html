@@ -11,16 +11,17 @@
 			<img src="settings.svg" width=100% height=100%>
 		</button>
 		<div id="sidebar">
-			<p class="button">test button</p>
-			<a class="button" href="index.html">link button</a>
-			<p class="button">another button</p>
-			<p class="button">BUTTON!!</p>
-			<p class="button">more button</p>
-			<p class="button">button button</p>
+			<div class="button", onclick="change_mission('UTC', 0)">UTC Clock</div>
+			<div class="button"  onclick="change_mission('M-Cubed', 0)">M-Cubed</div>
+			<div class="button"  onclick="change_mission('MCubed-2', 0)">MCubed-2</div>
+			<div class="button"  onclick="change_mission('RAX', 0)">RAX</div>
+			<div class="button"  onclick="change_mission('RAX-2', 0)">RAX-2</div>
+			<div class="button"  onclick="change_mission('E1P', 0)">E1P</div>
+			<div class="button"  onclick="change_mission('E1P-FU2', 0)">E1P-FU2</div>
 		</div>
 		<div class="mainwindow">
-			<p class="label">UTC</p>
-			<p class="clock", id="UTC">000:00:00:00</p>
+			<p class="label", id="label1">UTC</p>
+			<p class="clock", id="clock1">000:00:00:00</p>
 		</div>
 	</body>
 </html>

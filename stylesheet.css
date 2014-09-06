@@ -5,11 +5,17 @@ body {
 .mainwindow {
 	position: fixed;
 	width: 100%;
-	font-size: 7vw;
 	line-height: 2vw;
 	text-align: center;
 	font-family: Sans-Serif;
 	color: yellow;
+}
+
+.label {
+	font-size: 5vw;
+}
+.clock {
+	font-size: 10vw;
 }
 
 #sidebar {
@@ -19,7 +25,8 @@ body {
 	height: 96vh;
 	margin-top: 1vh;
 	background-color: #080808;
-	margin-left: -250px;
+	margin-left: -300px;
+	z-index: 1;
 }
 
 .button {
