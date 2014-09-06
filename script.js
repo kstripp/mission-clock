@@ -6,8 +6,23 @@ function update_clocks()
 	var time = new Date();
 	time = time - launch_date;
 	time = new Date(time);
+
+	var one_day = 1000 * 60 * 60 * 24;
+
+	// If UTC, then only show days of year
+	label = document.getElementById("label1").innerHTML;
+	if(label == "UTC")
+	{
+		var year = time;
+		year = year.getUTCFullYear();
+		year = year + "-01-01T00:00:00Z";
+		year = new Date(year);
+		var days = time - year;
+		days = Math.floor( days / one_day ) + 1;
+	} else {
+		var days = Math.floor( time / one_day );
+	}
 	
-	var days 	= Math.floor(time / (1000 * 60 * 60 * 24));
 	var hours   = format_time_digits(time.getUTCHours());
 	var minutes = format_time_digits(time.getUTCMinutes());
 	var seconds = format_time_digits(time.getUTCSeconds());
