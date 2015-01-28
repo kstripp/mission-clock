@@ -3,11 +3,22 @@ var launch_date = new Date('1970-01-01T00:00:00Z');
 
 function update_clocks()
 {
+	var one_day = 1000 * 60 * 60 * 24;
+
 	var time = new Date();
 	time = time - launch_date;
-	time = new Date(time);
+	var tzero_flag = time / Math.abs(time)
+	time = new Date(Math.abs(time));
 
-	var one_day = 1000 * 60 * 60 * 24;
+	//Convert time sign to + or - character
+	if(tzero_flag < 0)
+	{
+		tzero_flag = "-";
+	}
+	else
+	{
+		tzero_flag = "+";
+	}
 
 	// If UTC, then only show days of year
 	label = document.getElementById("label1").innerHTML;
@@ -19,14 +30,15 @@ function update_clocks()
 		year = new Date(year);
 		var days = time - year;
 		days = Math.floor( days / one_day ) + 1;
+		tzero_flag = "";
 	} else {
-		var days = Math.floor( time / one_day );
+		var days = Math.floor( Math.abs(time / one_day) ) * (time / Math.abs(time));
 	}
-	
+
 	var hours   = format_time_digits(time.getUTCHours());
 	var minutes = format_time_digits(time.getUTCMinutes());
 	var seconds = format_time_digits(time.getUTCSeconds());
-	document.getElementById("clock1").innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
+	document.getElementById("clock1").innerHTML = tzero_flag + " " + days + ":" + hours + ":" + minutes + ":" + seconds;
 }
 
 function format_time_digits(value)
@@ -57,10 +69,10 @@ function hide_menu()
 function change_mission(name, date)
 {
 	label = document.getElementById("label1");
-	
+
 	now = new Date();
 	launch_date = new Date(date);
-	
+
 	if (name == "UTC")
 	{	
 		label.innerHTML = "UTC";
