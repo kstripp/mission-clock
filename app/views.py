@@ -34,6 +34,9 @@ def index():
     return flask.render_template('index.html', title="Mission Clock", missions=missions, clock_label=missions[0]['label'],mission=missions[0])
 
 @app.route('/<path:path>')
-def m_cubed(path):
-    idx = urls.index('/' + path)
+def show_clocks(path):
+    try:
+        idx = urls.index('/' + path)
+    except ValueError:
+        return "You are having a bad problem and you will not go to space today (404)"
     return flask.render_template('index.html', title="Mission Clock", missions=missions, clock_label=missions[idx]['label'],mission=missions[idx])
