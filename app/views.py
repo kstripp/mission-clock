@@ -33,10 +33,10 @@ for i in missions:
 def index():
     return flask.render_template('index.html', title="Mission Clock", missions=missions, clock_label=missions[0]['label'],mission=missions[0])
 
-@app.route('/<path:path>')
-def show_clocks(path):
+@app.route('/<mission_name>')
+def show_clocks(mission_name):
     try:
-        idx = urls.index('/' + path)
+        idx = urls.index('/' + mission_name)
     except ValueError:
-        return "You are having a bad problem and you will not go to space today (404)"
+        return "You are having a bad problem and you will not go to space today (404)" , 200, {'Content-Type': 'text/html; charset=utf-8'}
     return flask.render_template('index.html', title="Mission Clock", missions=missions, clock_label=missions[idx]['label'],mission=missions[idx])
