@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="static/stylesheet.css"/>
+		<script type="text/javascript" src="static/script.js"></script>
+		<meta Content-Type="text/html", charset="utf-8"/>
+		<title>Mission Clock</title>
+	</head>
+	<body onload="change_mission('FIREBIRD II','2015-01-31T14:22:42Z')">
+		<button id="settings_button" onclick="show_menu()">
+			<img src="static/settings.svg" width=100% height=100%>
+		</button>
+		<div id="sidebar">
+			
+			<a href=/utc.html><div class="button">UTC</div></a>
+			
+			<a href=/m-cubed.html><div class="button">M-Cubed</div></a>
+			
+			<a href=/mcubed-2.html><div class="button">MCubed-2</div></a>
+			
+			<a href=/rax.html><div class="button">RAX</div></a>
+			
+			<a href=/rax-2.html><div class="button">RAX-2</div></a>
+			
+			<a href=/e1p.html><div class="button">E1P</div></a>
+			
+			<a href=/e1p-fu2.html><div class="button">E1P-FU2</div></a>
+			
+			<a href=/grifex.html><div class="button">GRIFEX</div></a>
+			
+			<a href=/firebirdii.html><div class="button">FIREBIRD II</div></a>
+			
+		</div>
+		<div class="mainwindow" onclick="hide_menu()">
+			<p class="label", id="label1">FIREBIRD II</p>
+			<p class="clock", id="clock1">000:00:00:00</p>
+		</div>
+	</body>
+</html>
