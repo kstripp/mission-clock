@@ -13,15 +13,16 @@ class Mission(object):
 
 missions = []
 
-missions.append({'label':'UTC',         'launch_date':'1970-01-01T00:00:00Z', 'url':'/utc.html'})
-missions.append({'label':'M-Cubed',     'launch_date':'2011-10-28T19:48:01Z', 'url':'/m-cubed.html'})
-missions.append({'label':'MCubed-2',    'launch_date':'2013-12-06T06:30:00Z', 'url':'/mcubed-2.html'})
-missions.append({'label':'RAX',         'launch_date':'2010-11-20T01:25:00Z', 'url':'/rax.html'})
-missions.append({'label':'RAX-2',       'launch_date':'2011-10-28T19:48:01Z', 'url':'/rax-2.html'})
-missions.append({'label':'E1P',         'launch_date':'2011-03-04T10:09:43Z', 'url':'/e1p.html'})
-missions.append({'label':'E1P-FU2',     'launch_date':'2011-10-28T19:48:01Z', 'url':'/e1p-fu2.html'})
-missions.append({'label':'GRIFEX',      'launch_date':'2015-01-31T14:22:42Z', 'url':'/grifex.html'})
-missions.append({'label':'FIREBIRD II', 'launch_date':'2015-01-31T14:22:42Z', 'url':'/firebirdii.html'})
+missions.append({'label':'UTC',         'launch_date':'1970-01-01T00:00:00Z', 'url':'utc.html'})
+missions.append({'label':'M-Cubed',     'launch_date':'2011-10-28T19:48:01Z', 'url':'m-cubed.html'})
+missions.append({'label':'MCubed-2',    'launch_date':'2013-12-06T06:30:00Z', 'url':'mcubed-2.html'})
+missions.append({'label':'RAX',         'launch_date':'2010-11-20T01:25:00Z', 'url':'rax.html'})
+missions.append({'label':'RAX-2',       'launch_date':'2011-10-28T19:48:01Z', 'url':'rax-2.html'})
+missions.append({'label':'E1P',         'launch_date':'2011-03-04T10:09:43Z', 'url':'e1p.html'})
+missions.append({'label':'E1P-FU2',     'launch_date':'2011-10-28T19:48:01Z', 'url':'e1p-fu2.html'})
+missions.append({'label':'GRIFEX',      'launch_date':'2015-01-31T14:22:42Z', 'url':'grifex.html'})
+missions.append({'label':'FIREBIRD II', 'launch_date':'2015-01-31T14:22:42Z', 'url':'firebirdii.html'})
+missions.append({'label':'LMRST-Sat',   'launch_date':'2015-10-08T12:49:00Z', 'url':'lmrst.html'})
 
 urls = []
 for i in missions:
@@ -35,6 +36,7 @@ def index():
 
 @app.route('/<mission_name>')
 def show_clocks(mission_name):
+    print mission_name
     try:
         idx = urls.index('/' + mission_name)
     except ValueError:
